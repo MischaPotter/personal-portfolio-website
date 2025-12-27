@@ -1,20 +1,20 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
-@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-bold: 700;
-    --default-font-family: var(--font-sans);
+    --spacing: 0.25rem;
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --default-font-family: "Calibri";
     --default-mono-font-family: var(--font-mono);
     --princeton-orange: oklch(0.738 0.1834 54.69);
     --white-smoke: oklch(0.9692 0.0035 39.48);
     --navy: oklch(0.2307 0.1598 264.05);
+    --font-bold: "Calibri Bold";
   }
 }
 @layer base {
@@ -166,18 +166,38 @@
   }
 }
 @layer utilities {
+  .fixed {
+    position: fixed;
+  }
+  .top-0 {
+    top: calc(var(--spacing) * 0);
+  }
+  .right-0 {
+    right: calc(var(--spacing) * 0);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
+  .mr-9 {
+    margin-right: calc(var(--spacing) * 9);
+  }
+  .flex {
+    display: flex;
+  }
   .table {
     display: table;
   }
-  .border-collapse {
-    border-collapse: collapse;
+  .flex-col {
+    flex-direction: column;
   }
-  .resize {
-    resize: both;
+  .flex-row {
+    flex-direction: row;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .justify-around {
+    justify-content: space-around;
   }
   .bg-\(--navy\) {
     background-color: var(--navy);
@@ -188,57 +208,43 @@
   .bg-\(--white-smoke\) {
     background-color: var(--white-smoke);
   }
-  .bg-\[var\(--navy\)\] {
-    background-color: var(--navy);
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
-  .bg-\[var\(--princeton-orange\)\] {
-    background-color: var(--princeton-orange);
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
-  .bg-\[var\(--white-smoke\)\] {
-    background-color: var(--white-smoke);
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
-  }
-  .font-bold {
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
+  .text-8xl {
+    font-size: var(--text-8xl);
+    line-height: var(--tw-leading, var(--text-8xl--line-height));
   }
   .text-\(--navy\) {
     color: var(--navy);
   }
-  .text-\[var\(--navy\)\] {
-    color: var(--navy);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
+  .text-\(--princeton-orange\) {
+    color: var(--princeton-orange);
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+@font-face {
+  font-family: "Calibri";
+  font-style: normal;
+  src: url("/fonts/Calibri/calibri-regular.ttf");
 }
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
+@font-face {
+  font-family: "Calibri Bold";
+  src: url("/fonts/Calibri/calibri-bold.ttf");
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+@font-face {
+  font-family: "Calibri Italic";
+  font-style: italic;
+  src: url("/fonts/Calibri/calibri-italic.ttf");
 }
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
-      --tw-font-weight: initial;
-      --tw-outline-style: solid;
-    }
-  }
+@font-face {
+  font-family: "Calibri Bold Italic";
+  src: url("/fonts/Calibri/calibri-bold-italic.ttf");
+}
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
