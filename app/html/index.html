@@ -3,26 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="css/style.css" rel="stylesheet"> -->
-  <link href="css/output.css" rel="stylesheet">
+  <!-- Compiled Tailwind CSS -->
+  <link href="/css/output.css" rel="stylesheet">
+  <link href="/img/favicon.ico" rel="icon">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp|Material+Symbols+Outlined" rel="stylesheet" />
   <title>Mischa Potter</title>
 </head>
 <body class="bg-(--white-smoke)">
   <header>
-    <div class="bg-(--princeton-orange)">
-      <ul class="text-(--navy)">
-        <li>Home</li>
-        <li>About Me</li>
-        <li>Projects</li>
-        <li>Experience</li>
-        <li>Resume</li>
+    <div class="bg-(--princeton-orange) fixed top-0 right-0 left-0">
+      <ul class="text-(--navy) flex flex-row justify-around p-4 font-bold">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#projects">Projects/Experience</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </header>
-  <p class="text-3xl font-bold underline">Mischa Potter</p>
-  <footer class="bg-(--navy)">
+  <main>
+    <div class="flex flex-col justify-center items-center">
+      <h1 class="text-8xl text-(--princeton-orange) mt-32 font-bold">Mischa Potter</h1>
+      <h2 class="text-4xl text-(--princeton-orange) p-5 font-bold">Software Developer</h2>
+      <img src="/img/down arrow.svg" class="w-32 animate-bounce" alt="An orange arrow pointing downwards">
+    </div>
     <div>
-      <p>Mischa Potter | 2025</p>
+      <h1 id="about-me" class="text-4xl text-(--princeton-orange) p-5 font-bold">About Me</h1>
+    </div>
+    <div>
+      <h1 id="projects" class="text-4xl text-(--princeton-orange) p-5 font-bold">Projects/Experience</h1>
+    </div>
+    <div>
+      <h1 id="resume" class="text-4xl text-(--princeton-orange) p-5 font-bold">Resume</h1>
+    </div>
+    <div>
+      <h1 id="contact" class="text-4xl text-(--princeton-orange) p-5 font-bold">Contact</h1>
+    </div>
+  </main>
+  <footer>
+    <div class="bg-(--navy) flex flex-row justify-center">
+      <p class="text-(--white-smoke)">Mischa Potter | 2025</p>
     </div>
   </footer>
 </body>

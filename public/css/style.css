@@ -1,7 +1,41 @@
 @import "tailwindcss";
 
+/* To run tailwind CLI input and output CSS file/automatic building of output file, use this */
+/* npx tailwindcss -i ./public/css/style.css -o ./public/css/output.css -w */
+
 @theme {
   --princeton-orange: oklch(0.738 0.1834 54.69); /* Princeton Orange */
   --white-smoke: oklch(0.9692 0.0035 39.48); /* White Smoke */
   --navy: oklch(0.2307 0.1598 264.05); /* Navy */
+  --default-font-family: "Calibri";
+  --font-bold: "Calibri Bold";
+  --font-italic: "Calibri Italic";
+  --font-bold-italic: "Calibri Bold Italic"
 };
+
+@font-face {
+  font-family: "Calibri";
+  font-style: normal;
+  src: url("/fonts/Calibri/calibri-regular.ttf");
+}
+
+@font-face {
+  font-family: "Calibri Bold";
+  src: url("/fonts/Calibri/calibri-bold.ttf");
+}
+
+@font-face {
+  font-family: "Calibri Italic";
+  font-style: italic;
+  src: url("/fonts/Calibri/calibri-italic.ttf");
+}
+
+@font-face {
+  font-family: "Calibri Bold Italic";
+  src: url("/fonts/Calibri/calibri-bold-italic.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
