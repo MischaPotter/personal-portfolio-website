@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* To run tailwind CLI input and output CSS file/automatic building of output file, use this */
+/* npx tailwindcss -i ./public/css/style.css -o ./public/css/output.css -w */
+
 @theme {
   --princeton-orange: oklch(0.738 0.1834 54.69); /* Princeton Orange */
   --white-smoke: oklch(0.9692 0.0035 39.48); /* White Smoke */
