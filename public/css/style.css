@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* To run tailwind CLI input and output CSS file/automatic building of output file, use this */
-/* npx tailwindcss -i ./public/css/style.css -o ./public/css/output.css -w */
+/* npx tailwindcss -i ./public/css/style.css -o ./public/css/output[HASHCODE].css -w */
 
 @theme {
   --princeton-orange: oklch(0.738 0.1834 54.69); /* Princeton Orange */
@@ -33,6 +33,10 @@
 @font-face {
   font-family: "Calibri Bold Italic";
   src: url("/fonts/Calibri/calibri-bold-italic.ttf");
+}
+
+@keyframes hoverNavbar {
+  
 }
 
 html {
