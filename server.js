@@ -9,6 +9,7 @@ app.use("/js", express.static("./public/js"));
 app.use("/css", express.static("./public/css"));
 app.use("/img", express.static("./public/img"));
 app.use("/fonts", express.static("./public/fonts"));
+app.use("/data", express.static("./app/data"));
 
 app.get("/", function (req, res) {
   let doc = fs.readFileSync("./app/html/index.html", "utf8");

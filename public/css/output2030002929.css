@@ -1,23 +1,30 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --spacing: 0.25rem;
+    --container-sm: 24rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-8xl: 6rem;
     --text-8xl--line-height: 1;
+    --radius-xl: 0.75rem;
     --animate-bounce: bounce 1s infinite;
     --default-font-family: "Calibri";
     --default-mono-font-family: var(--font-mono);
     --princeton-orange: oklch(0.738 0.1834 54.69);
+    --dark-orange: oklch(0.6543 0.161998 55.009);
     --white-smoke: oklch(0.9692 0.0035 39.48);
     --navy: oklch(0.2307 0.1598 264.05);
+    --light-navy: oklch(0.3 0.2034 264.79);
+    --grey: oklch(0.5999 0 0);
     --font-bold: "Calibri Bold";
+    --font-italic: "Calibri Italic";
   }
 }
 @layer base {
@@ -181,8 +188,26 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
+  .z-0 {
+    z-index: 0;
+  }
+  .z-10 {
+    z-index: 10;
+  }
+  .m-0 {
+    margin: calc(var(--spacing) * 0);
+  }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
   .m-10 {
     margin: calc(var(--spacing) * 10);
+  }
+  .mx-0 {
+    margin-inline: calc(var(--spacing) * 0);
+  }
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
   }
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
@@ -190,8 +215,14 @@
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
+  .grid {
+    display: grid;
+  }
+  .inline {
+    display: inline;
+  }
+  .w-1\/2 {
+    width: calc(1/2 * 100%);
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
@@ -199,8 +230,26 @@
   .w-screen {
     width: 100vw;
   }
+  .w-sm {
+    width: var(--container-sm);
+  }
   .animate-bounce {
     animation: var(--animate-bounce);
+  }
+  .scroll-mt-6 {
+    scroll-margin-top: calc(var(--spacing) * 6);
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-disc {
+    list-style-type: disc;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -223,6 +272,19 @@
   .justify-center {
     justify-content: center;
   }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+  .justify-self-center {
+    justify-self: center;
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
   .bg-\(--navy\) {
     background-color: var(--navy);
   }
@@ -232,14 +294,26 @@
   .bg-\(--white-smoke\) {
     background-color: var(--white-smoke);
   }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
+  .px-7 {
+    padding-inline: calc(var(--spacing) * 7);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
   .font-bold {
     font-family: var(--font-bold);
+  }
+  .font-italic {
+    font-family: var(--font-italic);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -253,6 +327,9 @@
     font-size: var(--text-8xl);
     line-height: var(--tw-leading, var(--text-8xl--line-height));
   }
+  .text-\(--grey\) {
+    color: var(--grey);
+  }
   .text-\(--navy\) {
     color: var(--navy);
   }
@@ -261,6 +338,20 @@
   }
   .text-\(--white-smoke\) {
     color: var(--white-smoke);
+  }
+  .hover\:bg-\(--dark-orange\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--dark-orange);
+      }
+    }
+  }
+  .hover\:bg-\(--light-navy\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--light-navy);
+      }
+    }
   }
 }
 @font-face {
@@ -285,6 +376,14 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
+h2 {
+  scroll-margin-top: 70px;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @keyframes bounce {
   0%, 100% {
     transform: translateY(-25%);
@@ -293,5 +392,12 @@ html {
   50% {
     transform: none;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+    }
   }
 }

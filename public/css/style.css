@@ -5,8 +5,11 @@
 
 @theme {
   --princeton-orange: oklch(0.738 0.1834 54.69); /* Princeton Orange */
+  --dark-orange: oklch(0.6543 0.161998 55.009); /* Dark Orange */
   --white-smoke: oklch(0.9692 0.0035 39.48); /* White Smoke */
   --navy: oklch(0.2307 0.1598 264.05); /* Navy */
+  --light-navy: oklch(0.3 0.2034 264.79); /* Light Navy */
+  --grey: oklch(0.5999 0 0);
   --default-font-family: "Calibri";
   --font-bold: "Calibri Bold";
   --font-italic: "Calibri Italic";
@@ -42,4 +45,8 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: none;
+}
+
+h2 {
+  scroll-margin-top: 70px;
 }
